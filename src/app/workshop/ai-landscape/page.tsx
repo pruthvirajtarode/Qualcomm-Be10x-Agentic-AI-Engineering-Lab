@@ -10,7 +10,23 @@ import { useWorkshopStore } from "@/store/useWorkshopStore";
 import { toast } from "sonner";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, AreaChart, Area, CartesianGrid, LineChart, Line } from "recharts";
 
-const TIMELINE = [
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type TimelineItem = {
+  id: string;
+  title: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  icon: any;
+  year: string;
+  description: string;
+  details: string;
+  useCase: string;
+  chartType: string;
+  chartTitle: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  chartData: any[];
+};
+
+const TIMELINE: TimelineItem[] = [
   {
     id: "rules",
     title: "Rules-Based Systems",
