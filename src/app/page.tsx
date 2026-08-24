@@ -1,8 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
+
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Terminal, Cpu, Database, Network, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -72,10 +74,10 @@ export default function LandingPage() {
           </span>
         </div>
         <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-muted-foreground">
-          <span className="hover:text-foreground cursor-pointer transition-colors">Workshop</span>
-          <span className="hover:text-foreground cursor-pointer transition-colors">Agentic AI</span>
-          <span className="hover:text-foreground cursor-pointer transition-colors">RAG</span>
-          <span className="hover:text-foreground cursor-pointer transition-colors">Agent Lab</span>
+          <Link href="/workshop" className="hover:text-foreground cursor-pointer transition-colors">Workshop</Link>
+          <Link href="/workshop/agentic-ai" className="hover:text-foreground cursor-pointer transition-colors">Agentic AI</Link>
+          <Link href="/workshop/rag-playground" className="hover:text-foreground cursor-pointer transition-colors">RAG</Link>
+          <Link href="/workshop/agent-builder" className="hover:text-foreground cursor-pointer transition-colors">Agent Lab</Link>
         </nav>
         <Button onClick={() => router.push('/workshop')} className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90">
           Start Workshop <ArrowRight className="w-4 h-4" />
