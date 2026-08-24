@@ -34,7 +34,16 @@ export default function WorkshopDashboard() {
             className="flex items-center justify-between"
           >
             <div>
-              <h1 className="text-4xl font-bold tracking-tight">Welcome, {participantName} 👋</h1>
+              <h1 className="text-4xl font-bold tracking-tight flex items-center gap-3">
+                Welcome, {participantName} 
+                <motion.span 
+                  className="inline-block origin-[70%_70%]"
+                  animate={{ rotate: [0, 14, -8, 14, -4, 10, 0, 0] }}
+                  transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
+                >
+                  👋
+                </motion.span>
+              </h1>
               <p className="text-muted-foreground mt-2 text-lg">
                 Your Agentic AI Engineering Lab journey awaits.
               </p>
@@ -90,9 +99,11 @@ export default function WorkshopDashboard() {
                   key={mod.id}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: idx * 0.05 }}
+                  whileHover={isLocked ? {} : { scale: 1.02, y: -4 }}
+                  transition={{ delay: idx * 0.05, type: "spring", stiffness: 400, damping: 25 }}
+                  className="h-full"
                 >
-                  <Card className={`h-full flex flex-col ${isCompleted ? 'border-primary/30 bg-primary/5' : isLocked ? 'opacity-70 grayscale' : 'hover:border-primary/50 transition-colors'}`}>
+                  <Card className={`h-full flex flex-col shadow-sm hover:shadow-xl transition-all duration-300 ${isCompleted ? 'border-primary/30 bg-primary/5' : isLocked ? 'opacity-70 grayscale' : 'hover:border-primary/50'}`}>
                     <CardHeader>
                       <div className="flex items-center justify-between mb-2">
                         <span className="text-sm font-mono text-muted-foreground font-semibold">0{idx + 1}</span>
