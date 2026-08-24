@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { useWorkshopStore } from "@/store/useWorkshopStore";
 import { WORKSHOP_MODULES } from "@/types/workshop";
 import { Progress } from "@/components/ui/progress";
-import { Trophy, Star, ChevronLeft, LayoutDashboard, Settings2, X } from "lucide-react";
+import { Trophy, Star, ChevronLeft, LayoutDashboard, Settings2, X, Home } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function WorkshopLayout({
@@ -120,6 +120,16 @@ export default function WorkshopLayout({
           style={{ width: `${progressPercentage}%` }}
         />
       </div>
+
+      {/* Global Quick Action Bar for Presenter */}
+      {pathname !== "/workshop" && (
+        <div className="w-full max-w-6xl mx-auto px-6 pt-6 -mb-4 relative z-20">
+          <Link href="/" className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground bg-muted/30 hover:bg-muted/50 px-3 py-1.5 rounded-md transition-all border border-border/40 shadow-sm backdrop-blur-sm">
+            <Home className="w-4 h-4" />
+            Return to Home
+          </Link>
+        </div>
+      )}
 
       <main className="flex-1 flex flex-col w-full max-w-[1920px] mx-auto overflow-hidden relative z-10">
         
