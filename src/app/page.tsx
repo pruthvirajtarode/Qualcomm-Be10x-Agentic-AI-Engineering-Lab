@@ -33,20 +33,39 @@ export default function LandingPage() {
     setDemoRunning(false);
   };
 
+  useEffect(() => {
+    // Automatically start the demo after 1.5 seconds for a dynamic feel
+    const timer = setTimeout(() => {
+      runDemo();
+    }, 1500);
+    return () => clearTimeout(timer);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col font-sans selection:bg-primary selection:text-primary-foreground">
       {/* Header */}
       <header className="flex items-center justify-between px-8 py-6 border-b border-border/40 backdrop-blur-md sticky top-0 z-50 bg-background/80">
         <div className="flex items-center gap-6">
-          <Image 
-            src="/assets/qualcomm logo.png" 
-            alt="Qualcomm Logo" 
-            width={140} 
-            height={40} 
-            className="object-contain dark:invert"
-          />
+          <div className="flex items-center gap-4">
+            <Image 
+              src="/assets/qualcomm logo.png" 
+              alt="Qualcomm Logo" 
+              width={140} 
+              height={40} 
+              className="object-contain dark:invert"
+            />
+            <div className="h-6 w-px bg-border" />
+            <Image 
+              src="/assets/be 10 x logo.jpg" 
+              alt="Be10x Logo" 
+              width={80} 
+              height={24} 
+              className="object-contain rounded-sm"
+            />
+          </div>
           <div className="h-6 w-px bg-border hidden md:block" />
-          <span className="text-sm font-medium tracking-widest text-muted-foreground hidden md:block">
+          <span className="text-sm font-medium tracking-widest text-muted-foreground hidden lg:block">
             ENGINEERING LAB
           </span>
         </div>
@@ -64,8 +83,16 @@ export default function LandingPage() {
       {/* Hero Section */}
       <main className="flex-1 flex flex-col lg:flex-row items-center justify-center p-8 lg:p-16 gap-12 max-w-[1920px] mx-auto w-full relative overflow-hidden">
         {/* Abstract Background Elements */}
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] -z-10 pointer-events-none" />
-        <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[150px] -z-10 pointer-events-none" />
+        <motion.div 
+          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3], x: [0, 20, 0] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] -z-10 pointer-events-none" 
+        />
+        <motion.div 
+          animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.5, 0.2], y: [0, -30, 0] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[150px] -z-10 pointer-events-none" 
+        />
 
         {/* Left Content */}
         <div className="flex-1 space-y-8 z-10 max-w-2xl">
@@ -179,13 +206,6 @@ export default function LandingPage() {
         <div className="text-xs text-muted-foreground">
           © 2026 Qualcomm Technologies, Inc. and/or its affiliated companies.
         </div>
-        <Image 
-          src="/assets/be 10 x logo.jpg" 
-          alt="Be10x Logo" 
-          width={100} 
-          height={30} 
-          className="object-contain opacity-70 hover:opacity-100 transition-opacity rounded-sm"
-        />
       </footer>
     </div>
   );
