@@ -7,7 +7,8 @@ import { usePathname } from "next/navigation";
 import { useWorkshopStore } from "@/store/useWorkshopStore";
 import { WORKSHOP_MODULES } from "@/types/workshop";
 import { Progress } from "@/components/ui/progress";
-import { Trophy, Star, ChevronLeft, LayoutDashboard, Settings2 } from "lucide-react";
+import { Trophy, Star, ChevronLeft, LayoutDashboard, Settings2, X } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function WorkshopLayout({
   children,
@@ -54,13 +55,21 @@ export default function WorkshopLayout({
       {/* Workshop Navbar */}
       <header className="flex items-center justify-between px-6 py-4 border-b border-border/40 bg-card/50 backdrop-blur-md sticky top-0 z-40">
         <div className="flex items-center gap-6">
-          <Link href="/">
+          <Link href="/" className="flex items-center gap-4">
             <Image 
               src="/assets/qualcomm logo.png" 
               alt="Qualcomm Logo" 
               width={120} 
               height={32} 
               className="object-contain dark:invert hover:opacity-80 transition-opacity"
+            />
+            <X className="w-3 h-3 text-muted-foreground/50" />
+            <Image 
+              src="/assets/be 10 x logo.jpg" 
+              alt="Be10x Logo" 
+              width={70} 
+              height={20} 
+              className="object-contain rounded-sm hover:opacity-80 transition-opacity"
             />
           </Link>
           <div className="h-6 w-px bg-border hidden md:block" />
@@ -112,7 +121,12 @@ export default function WorkshopLayout({
         />
       </div>
 
-      <main className="flex-1 flex flex-col w-full max-w-[1920px] mx-auto overflow-hidden">
+      <main className="flex-1 flex flex-col w-full max-w-[1920px] mx-auto overflow-hidden relative z-10">
+        
+        {/* Ambient SaaS Background Glows */}
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] -z-10 pointer-events-none" />
+        <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[120px] -z-10 pointer-events-none" />
+
         {children}
       </main>
     </div>
