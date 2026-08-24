@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Terminal, Cpu, Database, Network } from "lucide-react";
+import { ArrowRight, Terminal, Cpu, Database, Network, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AgentTraceStep, simulateAgentExecution } from "@/lib/demo-agent";
 
@@ -55,14 +55,16 @@ export default function LandingPage() {
               height={40} 
               className="object-contain dark:invert"
             />
-            <div className="h-6 w-px bg-border" />
-            <Image 
-              src="/assets/be 10 x logo.jpg" 
-              alt="Be10x Logo" 
-              width={80} 
-              height={24} 
-              className="object-contain rounded-sm"
-            />
+            <X className="w-4 h-4 text-muted-foreground/40" />
+            <div className="bg-white/90 p-1.5 rounded-lg flex items-center justify-center shadow-sm">
+              <Image 
+                src="/assets/be 10 x logo.jpg" 
+                alt="Be10x Logo" 
+                width={70} 
+                height={22} 
+                className="object-contain mix-blend-multiply"
+              />
+            </div>
           </div>
           <div className="h-6 w-px bg-border hidden md:block" />
           <span className="text-sm font-medium tracking-widest text-muted-foreground hidden lg:block">

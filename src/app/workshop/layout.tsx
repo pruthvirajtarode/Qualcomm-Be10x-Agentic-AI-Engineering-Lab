@@ -63,14 +63,16 @@ export default function WorkshopLayout({
               height={32} 
               className="object-contain dark:invert hover:opacity-80 transition-opacity"
             />
-            <X className="w-3 h-3 text-muted-foreground/50" />
-            <Image 
-              src="/assets/be 10 x logo.jpg" 
-              alt="Be10x Logo" 
-              width={70} 
-              height={20} 
-              className="object-contain rounded-sm hover:opacity-80 transition-opacity"
-            />
+            <X className="w-4 h-4 text-muted-foreground/40" />
+            <div className="bg-white/90 p-1.5 rounded-lg flex items-center justify-center shadow-sm hover:opacity-80 transition-opacity">
+              <Image 
+                src="/assets/be 10 x logo.jpg" 
+                alt="Be10x Logo" 
+                width={70} 
+                height={22} 
+                className="object-contain mix-blend-multiply"
+              />
+            </div>
           </Link>
           <div className="h-6 w-px bg-border hidden md:block" />
           <Link href="/workshop" className="flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors">
