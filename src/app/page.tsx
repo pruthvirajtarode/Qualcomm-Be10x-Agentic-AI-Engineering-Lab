@@ -19,6 +19,13 @@ export default function LandingPage() {
 
   const runDemo = async () => {
     if (demoRunning) return;
+
+    // Scroll to terminal to ensure it's visible, especially on smaller screens
+    const terminalEl = document.getElementById('demo-terminal');
+    if (terminalEl) {
+      terminalEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
     setDemoRunning(true);
     setTraceSteps([]);
     setDemoComplete(false);
@@ -126,7 +133,7 @@ export default function LandingPage() {
         </div>
 
         {/* Right Content - Interactive WOW DEMO */}
-        <div className="flex-1 w-full max-w-2xl z-10 relative">
+        <div id="demo-terminal" className="flex-1 w-full max-w-2xl z-10 relative">
           <div className="rounded-2xl border border-border/50 bg-card/40 backdrop-blur-xl shadow-2xl overflow-hidden flex flex-col h-[550px]">
             <div className="flex items-center gap-2 px-4 py-3 border-b border-border/50 bg-muted/30">
               <div className="flex gap-1.5">
