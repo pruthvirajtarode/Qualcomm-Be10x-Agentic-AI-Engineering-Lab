@@ -55,16 +55,16 @@ export default function WorkshopLayout({
       {/* Workshop Navbar */}
       <header className="flex items-center justify-between px-6 py-4 border-b border-border/40 bg-card/50 backdrop-blur-md sticky top-0 z-40">
         <div className="flex items-center gap-6">
-          <Link href="/" className="flex items-center gap-4">
+          <div className="flex items-center gap-4">
             <Image 
               src="/assets/qualcomm logo.png" 
               alt="Qualcomm Logo" 
               width={120} 
               height={32} 
-              className="object-contain dark:invert hover:opacity-80 transition-opacity"
+              className="object-contain dark:invert"
             />
             <X className="w-4 h-4 text-muted-foreground/40" />
-            <div className="bg-white/90 p-1.5 rounded-lg flex items-center justify-center shadow-sm hover:opacity-80 transition-opacity">
+            <div className="bg-white/90 p-1.5 rounded-lg flex items-center justify-center shadow-sm">
               <Image 
                 src="/assets/be 10 x logo.jpg" 
                 alt="Be10x Logo" 
@@ -73,7 +73,7 @@ export default function WorkshopLayout({
                 className="object-contain mix-blend-multiply"
               />
             </div>
-          </Link>
+          </div>
           <div className="h-6 w-px bg-border hidden md:block" />
           <Link href="/workshop" className="flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors">
             <LayoutDashboard className="w-4 h-4" />
