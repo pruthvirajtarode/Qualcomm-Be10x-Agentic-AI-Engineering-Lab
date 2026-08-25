@@ -15,12 +15,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Qualcomm × Be10x | Agentic AI Engineering Lab",
+  title: "Qualcomm | Agentic AI Engineering Lab",
   description: "An interactive, hands-on enterprise workshop covering Agentic AI, LLMs, Retrieval-Augmented Generation (RAG), and modern AI application architecture.",
-  keywords: ["Qualcomm", "Be10x", "AI Workshop", "Agentic AI", "LLMs", "RAG", "Enterprise AI", "Machine Learning", "AI Agents"],
-  authors: [{ name: "Be10x" }, { name: "Qualcomm" }],
+  keywords: ["Qualcomm", "AI Workshop", "Agentic AI", "LLMs", "RAG", "Enterprise AI", "Machine Learning", "AI Agents"],
+  authors: [{ name: "Qualcomm" }],
   openGraph: {
-    title: "Qualcomm × Be10x | Agentic AI Engineering Lab",
+    title: "Qualcomm | Agentic AI Engineering Lab",
     description: "Build intelligent systems that reason, retrieve, and act. A comprehensive workshop on Agentic AI and LLM architectures.",
     type: "website",
     siteName: "Qualcomm Agentic AI Lab",
@@ -29,13 +29,13 @@ export const metadata: Metadata = {
         url: "/assets/qualcomm logo.png",
         width: 1200,
         height: 630,
-        alt: "Qualcomm x Be10x AI Workshop",
+        alt: "Qualcomm AI Workshop",
       }
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Qualcomm × Be10x | Agentic AI Engineering Lab",
+    title: "Qualcomm | Agentic AI Engineering Lab",
     description: "Build intelligent systems that reason, retrieve, and act. A comprehensive workshop on Agentic AI.",
     images: ["/assets/qualcomm logo.png"],
   },
