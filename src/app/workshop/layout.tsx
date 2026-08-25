@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { useWorkshopStore } from "@/store/useWorkshopStore";
 import { WORKSHOP_MODULES } from "@/types/workshop";
 import { Progress } from "@/components/ui/progress";
-import { Trophy, Star, ChevronLeft, LayoutDashboard, Settings2, X, Home } from "lucide-react";
+import { Trophy, Star, LayoutDashboard, Settings2, Home } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function WorkshopLayout({
@@ -63,16 +63,6 @@ export default function WorkshopLayout({
               height={32} 
               className="object-contain dark:invert"
             />
-            <X className="w-4 h-4 text-muted-foreground/40" />
-            <div className="bg-white/90 p-1.5 rounded-lg flex items-center justify-center shadow-sm">
-              <Image 
-                src="/assets/be 10 x logo.jpg" 
-                alt="Be10x Logo" 
-                width={70} 
-                height={22} 
-                className="object-contain mix-blend-multiply"
-              />
-            </div>
           </div>
           <div className="h-6 w-px bg-border hidden md:block" />
           <Link href="/workshop" className="flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors">
